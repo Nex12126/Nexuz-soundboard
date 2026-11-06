@@ -11,6 +11,7 @@ An installable Windows soundboard for playing local audio and routing selected a
 - Set independent sound, microphone, and app-capture levels up to 200%.
 - Search sounds and assign or disable keyboard shortcuts.
 - Keep sound paths, hotkeys, and output selection on the local device.
+<img width="2552" height="1390" alt="grafik" src="https://github.com/user-attachments/assets/c6acec64-71d4-4e58-be53-cc7ccb7411e0" />
 
 ## Requirements
 
