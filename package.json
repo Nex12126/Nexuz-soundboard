@@ -1,0 +1,61 @@
+{
+  "name": "nexuz-soundboard",
+  "productName": "Nexuz Soundboard",
+  "description": "Installable Windows soundboard with audio routing",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Nex12126"
+  },
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "desktop:dev": "concurrently -k \"vite --host 127.0.0.1\" \"wait-on http://127.0.0.1:5173 && electron .\"",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "start": "electron .",
+    "dist": "npm run build && electron-builder --win"
+  },
+  "dependencies": {
+    "loopback-capture": "^4.0.0",
+    "ps-list": "^9.0.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "concurrently": "^10.0.6",
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0",
+    "lucide-react": "^1.69.0",
+    "oxlint": "^1.90.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6",
+    "wait-on": "^9.5.1"
+  },
+  "build": {
+    "appId": "de.nexuz.soundboard",
+    "productName": "Nexuz Soundboard",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json",
+      "README.md",
+      "LICENSE"
+    ],
+    "target": "nsis",
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  }
+}
